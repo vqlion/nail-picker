@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --gray: rgb(27, 27, 27);
+  --bg-color: #83eefe;
+  --bg-image: url(fig/sky.jpg);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-decoration: underline wavy;
+  font-size: 1.25em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#pr_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  gap: 7vh;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  justify-content: space-around;
+  border: 2px var(--gray) dashed;
+  background-color: whitesmoke;
+  width: 60vh;
+  height: fit-content;
+}
+
+.box:nth-of-type(1) {
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  padding: 7px;
+  width: 75px;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  appearance: none;
+  border: none;
+  outline: none;
+  font-style: italic;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.color_pick {
+  background-color: rgba(253, 206, 224, 0);
+  border: none;
+  height: 40px;
+  margin: 0 5px;
+  border-radius: 20px;
+}
+
+.color_hid {
+  width: 0px;
+  height: 0px;
+  border: none;
+  visibility: hidden;
+}
+
+label {
+  font-family: "Ubuntu", sans-serif;
+}
+
+#sub_button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  width: 75px;
+  height: 35px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#sub_button:hover {
+  background-color: var(--gray);
+  transition: background-color 0.5s, color 0.5s;
+  cursor: pointer;
+  color: white;
+}
+
+.colors {
+  position: relative;
+}
+
+.color_right {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+
+.color_right:nth-child(1) {
+  background-color: rgb(85, 205, 252);
+  left: 155px;
+  top: 105px;
+}
+
+.color_right:nth-child(2) {
+  background-color: rgb(247, 168, 184);
+  left: 183px;
+  top: 40px;
+}
+
+.color_right:nth-child(3) {
+  background-color: rgb(255, 255, 255);
+  left: 180px;
+  top: 20px;
+}
+
+.color_right:nth-child(4) {
+  background-color: rgb(247, 168, 184);
+  left: 160px;
+  top: 20px;
+}
+
+.color_right:nth-child(5) {
+  background-color: rgb(85, 205, 252);
+  left: 120px;
+  top: 25px;
+}
+
+.color_left {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+
+.color_left:nth-child(1) {
+  background-color: rgb(255, 33, 140);
+  left: 30px;
+  top: 105px;
+}
+
+.color_left:nth-child(2) {
+  background-color: rgb(255, 33, 140);
+  left: 2px;
+  top: 40px;
+}
+
+.color_left:nth-child(3) {
+  background-color: rgb(255, 216, 0);
+  left: 7px;
+  top: 20px;
+}
+
+.color_left:nth-child(4) {
+  background-color: rgb(33, 177, 255);
+  left: 22px;
+  top: 20px;
+}
+
+.color_left:nth-child(5) {
+  background-color: rgb(33, 177, 255);
+  left: 60px;
+  top: 25px;
+}
+
+.hand {
+  position: relative;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+}
+
+footer p {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 0.75em;
+  color: var(--gray);
+  opacity: 75%;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  font-style: italic;
+  color: black;
+}
+
+a:hover {
+  text-shadow: 1px 1px 1px var(--gray);
+}
+
+@media screen and (max-device-width: 480px),
+  (min-width: 768px) and (max-width: 1024px) {
+  #pr_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    height: 70vh;
+  }
+
+  .box {
+    width: 90vw;
+    gap: 2vh;
+    padding: 1vh;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  select {
+    font-size: 4vw;
+    width: 25vw;
+    background-color: white;
+  }
+
+  .color_pick {
+    height: 10vw;
+    width: 15vw;
+  }
+
+  label {
+    font-size: 4vw;
+  }
+
+  input {
+    height: 3vw;
+    width: 3vw;
+  }
+
+  #sub_button {
+    font-size: 4vw;
+    width: 25vw;
+    height: 10vw;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  img {
+    height: 40vw;
+  }
+
+  .colors {
+    height: 40vw;
+    width: 40vw;
+  }
+
+  .color_right {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+  }
+
+  .color_right:nth-child(1) {
+    background-color: rgb(85, 205, 252);
+    left: 245px;
+    top: 40px;
+  }
+
+  .color_right:nth-child(2) {
+    background-color: rgb(247, 168, 184);
+    left: 316px;
+    top: 40px;
+  }
+
+  .color_right:nth-child(3) {
+    background-color: rgb(255, 255, 255);
+    left: 350px;
+    top: 40px;
+  }
+
+  .color_right:nth-child(4) {
+    background-color: rgb(247, 168, 184);
+    left: 363px;
+    top: 80px;
+  }
+
+  .color_right:nth-child(5) {
+    background-color: rgb(85, 205, 252);
+    left: 300px;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .color_left {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+  }
+
+  .color_left:nth-child(1) {
+    background-color: rgb(255, 33, 140);
+    left: 45px;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .color_left:nth-child(2) {
+    background-color: rgb(255, 33, 140);
+    left: 2px;
+    top: 80px;
+  }
+
+  .color_left:nth-child(3) {
+    background-color: rgb(255, 216, 0);
+    left: 13px;
+    top: 40px;
+  }
+
+  .color_left:nth-child(4) {
+    background-color: rgb(33, 177, 255);
+    left: 48px;
+    top: 40px;
+  }
+
+  .color_left:nth-child(5) {
+    background-color: rgb(33, 177, 255);
+    left: 118px;
+    top: 40px;
+  }
+
+  footer p {
+    font-size: 2vw;
+  }
+}

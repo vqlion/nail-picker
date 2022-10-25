@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/nail_style.css" />
+    <link rel="icon" href="styles/fig/favicon.ico">
+    <title>vql's nail picker</title>
+</head>
+
+<body>
+    <h1>Vql's nail picker</h1>
+    <div id="pr_body">
+        <div id="color_box" class="box">
+            <h2>Choose a number of colors</h2>
+            <div>
+                <select name="nb_color" id="nb_color">
+                    <option value="2">Two</option>
+                    <option selected value="3">Three</option>
+                    <option value="4">Four</option>
+                    <option value="5">Five</option>
+                    <option value="6">Six</option>
+                    <option value="7">Seven</option>
+                    <option value="8">Eight</option>
+                    <option value="9">Nine</option>
+                    <option value="10">Ten</option>
+                </select>
+            </div>
+            <div id="color_pickers">
+                <div>
+                    <input type="color" name="color_hid" class="color_hid">
+                    <input type="color" name="color_1" class="color_pick" id="color_1" value="#ff0000">
+                    <input type="color" name="color_2" class="color_pick" id="color_2" value="#75abed">
+                    <input type="color" name="color_3" class="color_pick" id="color_3" value="#ff74a2">
+                    <input type="color" name="color_4" class="color_pick" id="color_4" value="#000000">
+                    <input type="color" name="color_5" class="color_pick" id="color_5" value="#ffffff">
+                    <input type="color" name="color_hid" class="color_hid">
+                </div>
+                <div>
+                    <input type="color" name="color_hid" class="color_hid">
+                    <input type="color" name="color_6" class="color_pick" id="color_6" value="#fbff00">
+                    <input type="color" name="color_7" class="color_pick" id="color_7" value="#52e32d">
+                    <input type="color" name="color_8" class="color_pick" id="color_8" value="#ff6200">
+                    <input type="color" name="color_9" class="color_pick" id="color_9" value="#620a91">
+                    <input type="color" name="color_10" class="color_pick" id="color_10" value="#2d2de3">
+                    <input type="color" name="color_hid" class="color_hid">
+                </div>
+            </div>
+            <div>
+                <input type="checkbox" id="all_colors" name="all_colors">
+                <label for="all_colors">Use all colors</label>
+            </div>
+            <button id="sub_button">Let's go</button>
+        </div>
+        <div id="result" class="box">
+            <div class="hand_div">
+                <h2>Left Hand</h2>
+                <div class="colors">
+                    <div class="color_right color"></div>
+                    <div class="color_right color"></div>
+                    <div class="color_right color"></div>
+                    <div class="color_right color"></div>
+                    <div class="color_right color"></div>
+                    <img src="styles/fig/left_hand.png" alt="a hand with nails" class="hand">
+                </div>
+            </div>
+            <div class="hand_div">
+                <h2>Right Hand</h2>
+                <div>
+                    <div class="colors">
+                        <div class="color_left color"></div>
+                        <div class="color_left color"></div>
+                        <div class="color_left color"></div>
+                        <div class="color_left color"></div>
+                        <div class="color_left color"></div>
+                        <img src="styles/fig/right_hand.png" alt="a hand with nails" class="hand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Valentin Jossic © 2022 - <a href="https://vqlion.me">vqlion.me</a></p>
+    </footer>
+    <script src="scripts/nail_script.js"></script>
+</body>
+
+</html>
