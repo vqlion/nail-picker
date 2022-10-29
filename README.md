@@ -1,2 +1,5 @@
 # nail-picker
-Home of my nails' color picker, so I don't have to do it by myself
+
+Nail picker is a website that chooses the color of your nails for you, randomly, so you don't have to do it.
+
+https://vqlion.me/nail-picker
