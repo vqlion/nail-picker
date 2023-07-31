@@ -2,13 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 
 :root {
   --gray: rgb(27, 27, 27);
-  --background-1: #187795;
-  --background-2: #83eefe;
+  --background-1: #1bb2ff;
+  --background-2: #ffd900;
+  --background-3: #ff1b8d;
   --bg-color: #83eefe;
+  --pattern-color: rgba(255, 255, 255, 0.5);
   --bg-image: url(fig/sky.jpg);
 }
 
@@ -16,6 +19,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 * {
@@ -32,49 +36,49 @@ html {
 }
 
 body {
-  animation: background-pan 10s linear infinite;
-    background: linear-gradient(
-        to right,
-        var(--background-2),
-        var(--background-1),
-        var(--background-2)
-    );
-  background-attachment: fixed;
+  /* animation: background-pan 10s linear infinite; */
+  background: linear-gradient(135deg, var(--background-1) 0%, var(--background-2) 50%, var(--background-3) 100%);
   overflow: hidden;
-  background-size: 200%;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-}
-
-h1 {
-  font-family: "Raleway", cursive;
-  text-transform: uppercase;
-  font-style: italic;
-  font-weight: 900;
+  height: 100%;
+  background-size: 100%;
   display: flex;
   justify-content: center;
-  text-shadow: 1px 1px 0px whitesmoke;
 }
 
-h2 {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
+.grid-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(1000000px);
+}
+
+h1, h2 {
+  font-family: "Open sans", sans-serif;
+  /* text-transform: uppercase; */
   font-style: italic;
-  font-weight: 800;
-  font-size: 1.2em;
+  font-weight: 700;
+  font-size: 1.25rem;
   text-align: center;
   margin: 0;
   margin-bottom: 5px;
 }
 
+h2 {
+  font-size: 1rem;
+}
+
 #pr_body {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   font-family: "Ubuntu", sans-serif;
   gap: 7vh;
+  position: relative;
+  z-index: 2;
 }
 
 .box {
@@ -84,14 +88,14 @@ h2 {
   justify-content: space-around;
   border-radius: 15px;
   background-color: whitesmoke;
-  width: 40vw;
+  width: 110%;
   height: fit-content;
+
 }
 
 .box:nth-of-type(1) {
   flex-direction: column;
   align-items: center;
-  width: 30vw;
 }
 
 select {
@@ -100,7 +104,7 @@ select {
   text-align: center;
   color: black;
   border-radius: 5px;
-  appearance: none;
+  /* appearance: none; */
   border: none;
   outline: none;
   font-variant: small-caps;
@@ -108,14 +112,14 @@ select {
   font-weight: 700;
   font-family: "Open sans", sans-serif;
   font-size: 1em;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 select:hover {
-  background-color: var(--gray);
+  /* background-color: var(--gray);
   transition: background-color 0.5s, color 0.5s;
+  color: white; */
   cursor: pointer;
-  color: white;
 }
 
 .color_pick {
@@ -157,18 +161,62 @@ label {
   font-size: 1em;
   font-weight: bold;
   border: none;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 5px;
-  width: 75px;
-  height: 35px;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: white;
   transition: background-color 0.5s, color 0.5s;
+  position: relative;
+}
+
+#sub_button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 5px;
+  background: linear-gradient(112deg, rgba(255,9,0,1) 0%, rgba(255,127,0,1) 20%, rgba(255,239,0,1) 40%, rgba(0,241,29,1) 60%, rgba(0,121,255,1) 80%, rgba(168,0,255,1) 100%);  transition: opacity 0.5s;
+}
+
+#sub_button span {
+  position: relative;
+  z-index: 3;
+}
+
+#sub_button .blur {
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+#sub-button:hover .blur {
+  opacity: 1;
+}
+
+#sub_button:hover::after {
+  transition: opacity 0.5s;
+  cursor: pointer;
+  color: white;
+  opacity: 1;
 }
 
 #sub_button:hover {
-  background-color: var(--gray);
-  transition: background-color 0.5s, color 0.5s;
   cursor: pointer;
-  color: white;
 }
 
 .colors {
@@ -260,6 +308,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   bottom: 0;
+  z-index: 2;
 }
 
 footer p {
@@ -267,8 +316,8 @@ footer p {
   font-weight: 600;
   font-style: italic;
   margin: 0;
-  margin-bottom: 10px;
-  font-size: 0.75em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
   color: var(--gray);
   opacity: 75%;
 }
@@ -281,37 +330,34 @@ a {
 }
 
 a:hover {
-  text-shadow: 1px 1px 0px white;
+  text-shadow: 1px 1px 10px white;
 }
 
 @media screen and (max-device-width: 480px),
   (min-width: 768px) and (max-width: 1024px) {
+    body {
+      align-items: center;
+    }
+
   #pr_body {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    font-family: "Ubuntu", sans-serif;
-    height: 70vh;
+    height: 100%;
   }
 
   .box {
-    width: 90vw;
-    min-width: 90vw;
     gap: 2vh;
     padding: 1vh;
   }
 
   h1 {
-    font-size: 8vw;
-  }
-
-  h2 {
-    font-size: 4vw;
+    font-size: 3.5em;
   }
 
   select {
-    font-size: 4vw;
+    font-size: 2em;
     width: 25vw;
     background-color: white;
   }
@@ -323,8 +369,8 @@ a:hover {
   }
 
   .color_pick {
-    height: 10vw;
-    width: 15vw;
+    height: 7em;
+    width: 10em;
   }
 
   label {
@@ -332,17 +378,25 @@ a:hover {
   }
 
   input {
-    height: 3vw;
-    width: 3vw;
+    height: 3em;
+    width: 3em;
     margin: 0;
   }
 
   #sub_button {
-    font-size: 4vw;
-    width: 25vw;
-    height: 10vw;
+    font-size: 3rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 2rem;
     border-radius: 10px;
     background-color: white;
+  }
+
+  #sub_button:hover {
+    background-color: initial;
+    transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
+    color: initial;
   }
 
   img {
@@ -431,6 +485,6 @@ a:hover {
   }
 
   footer p {
-    font-size: 2vw;
+    font-size: 2rem;
   }
 }

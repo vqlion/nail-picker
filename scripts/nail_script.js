@@ -31,7 +31,9 @@ function updateMod(e) {
 function updateNailColors(e) {
     for (let i = 0; i < colors.length; i++) {
         let rand = getRandomInt(parseFloat(nbColor.value))
-        colors[i].style.background = colorPickers[rand].value
+        setTimeout(() => {
+            colors[i].style.background = colorPickers[rand].value
+        }, (i + 1) * 50)
     }
 }
 
@@ -54,7 +56,10 @@ function updateNailAllColors(e) {
     }
     shuffleArray(colorOrder)
     for(let k = 0; k < colorOrder.length; k++) {
-        colors[k].style.background = colorOrder[k]
+        setTimeout(() => {
+            colors[k].style.background = colorOrder[k]
+
+        }, (k + 1) * 5)
     }
 }
 
